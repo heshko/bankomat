@@ -5,19 +5,22 @@ using System.Text;
 namespace bankomat.Domain
 {
 
-    abstract class Card
+    abstract class Card : Object
     {
         public string PinCode { get; set; }
 
         public string CardNumber { get; set; }
 
         public Account Account { get; set; }
+       
 
-      protected   Card(string cardNumber, string pinCode, Account account)
+
+        protected   Card(string cardNumber, string pinCode, Account account)
         {
             CardNumber = cardNumber;
             PinCode = pinCode;
             Account = account;
+          
         }
 
         public abstract bool Withdraw(decimal amount);
